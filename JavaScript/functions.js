@@ -51,3 +51,20 @@ return el;
 
 
 
+
+
+
+
+
+
+//HTML FUNCTIONS 
+
+function showHTML(ac) {
+var body = getElement('body',0).innerHTML;
+if (ac=='alert') {
+alert(body);
+} else {
+console.log(body);
+}
+
+}
