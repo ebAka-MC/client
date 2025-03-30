@@ -1,12 +1,22 @@
 
 //grade func
-function getElement(x,y) {
-if(y == undefined) {
-var el = document.querySelectorAll(x); 
-}else {
-var el = document.querySelectorAll(x)[y]; 
-}
-return el;   
+function getElement(x, y) {
+  let element;
+  
+  if (y === undefined) {
+    element = document.querySelectorAll(x);
+  } else {
+    element = document.querySelectorAll(x)[y];
+  }
+  
+  // Добавляем метод searchEl, если запрошен один элемент (не NodeList)
+  if (element && y !== undefined) {
+    element.searchEl = function(selector) {
+      return this.querySelectorAll(selector);
+    };
+  }
+  
+  return element;
 }
 function createElement(name, attributes, apend,inner) {
 var new_el = document.createElement(name);
