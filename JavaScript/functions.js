@@ -41,20 +41,11 @@ new_el.innerHTML=inner;
 return new_el;
 }
 
-function elementAttribute(el,pos,name) {
-var atr = getElement(el,pos).getAttribute(name);
-return atr;  
-}
-
 function removeElement(e,n) {
 document.querySelectorAll(e)[n].remove();
 }
 
-function setElementImage(el,size,position,url) {
-getElement(el,0).setAttribute("style","background-image:url('"+url+"');background-repeat:no-repeat;background-position:"+position+";background-size:"+size+";");    
-}
-
-function getElementToElement(tags, elements) {
+function getElementTo(tags, elements) {
 var el = elements.querySelectorAll(tags)[0];
 return el;   
 }
@@ -64,17 +55,3 @@ return el;
 
 
 
-
-
-
-//HTML FUNCTIONS 
-
-function showHTML(ac) {
-var body = getElement('body',0).innerHTML;
-if (ac=='alert') {
-alert(body);
-} else if(ac=='console'){
-console.log(body);
-}
-
-}
